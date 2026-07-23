@@ -4,10 +4,10 @@ set -euo pipefail
 TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 NCPU="${1:-24}"
 
-RR="/home/dell/data/sps/ddRAD/1.rawReads/gharial"          # input dir
-OUT="/home/dell/data/sps/ddRAD/9.stacks/03.trimmed"        # output dir
-LOGDIR="/home/dell/data/sps/ddRAD/9.stacks/10.log_files"   # logs
-ADP="/home/dell/data/sps/ddRAD/9.stacks/01.info_files/adapters.fasta"
+RR="input.dir"
+OUT="output.dir"
+LOGDIR="10.log_files"
+ADP="adapters.fasta"
 
 mkdir -p "$OUT" "$LOGDIR"
 
