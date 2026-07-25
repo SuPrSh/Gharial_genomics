@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-#Note:ANGSD script for filtering BAM 
+#Note:ANGSD script for population structure analysis with maf filter 
 #---- paths
 DIR="deduplicated.bam"
 OUTDIR="outputfile"
