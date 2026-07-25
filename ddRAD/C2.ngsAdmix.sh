@@ -1,15 +1,24 @@
 #!/bin/bash
-#Note: NGSadmix script for population structure analysis
+#Note: Admixture script for population structure analysis
 #---- paths
-INDIR="angsd/pca"
+INDIR="angsd/plink"
 OUTDIR="angsd/admix"
-INFILE="${INDIR}/ggan_angsd_pca.r3.step2.beagle.gz"
-NGSADMIX="NGSadmix"
+ADMIX="admixture"
 
 mkdir -p "$OUTDIR"
-echo "Running admix..."
-for K in {2..10}; do
-    $NGSADMIX -likes "$INFILE" -K $K -P 24 -minMaf 0.05 -minInd 16 \
-        -o "${OUTDIR}/ggan_ngsAdmix_${K}_out"
-done
+
+#----loops for running admixture at each K for 10 runs per k
+#----Defining the file name
+prefix="ggan.admix"
+#----first loop to run admixture r number of times for each value of K
+    for r in {1..10}
+    do
+#----second loop to run admixture for different values of K
+	    for K in {2..10}
+	    do
+#----cv option will do cross-validation to find the best K value from the output log file
+	    $ADMIX --cv -s ${RANDOM} ./${prefix}.bed ${K} | tee $OUTDIR/log${prefix}K${K}r${r}.out
+	    mv ./${prefix}.${K}.Q ./admixtureOutput/${prefix}.K${K}r${r}.Q
+	    done
+    done
 echo "Done"
