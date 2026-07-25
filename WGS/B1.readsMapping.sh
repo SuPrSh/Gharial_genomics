@@ -31,10 +31,4 @@ picard -Xmx128g MarkDuplicates \
 
 samtools index -@ "$THREADS" "${PREFIX}.rmdup.bam"
 
-#---- variant calling
-echo "variant calling"
-bcftools mpileup -Q 30 -q 30 -C 50 -A -Ou --threads "$THREADS" \
-    -f "$GENOME_GZ" "${PREFIX}.rmdup.bam" \
-    | bcftools call -c -Ov -o "${PREFIX}_variants.vcf"
-
 echo "Done."
