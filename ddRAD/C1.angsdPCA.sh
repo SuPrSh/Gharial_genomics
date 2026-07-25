@@ -8,11 +8,11 @@ NCPU="${1:-24}"   # run: ./run_angsd.sh 32  (optional)
 #---- paths
 DIR="deduplicated.bams"
 REF="reference.faa.gz"
-OUTDIR="pca.r1"
+OUTDIR="angsd/pca"
 SNP="Global_SNPList.txt"
 ANGSD="angsd.path"
 BAMLIST="$DIR/listBams.21samp"
-PREFIX="$OUTDIR/ggan_angsd_pca.r3.step2"
+PREFIX="$OUTDIR/ggan_angsd_pca.r3"
 
 mkdir -p "$OUTDIR"
 
