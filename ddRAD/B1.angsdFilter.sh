@@ -10,7 +10,7 @@ BAMLIST="${DIR}/listBams"
 PREFIX="${OUTDIR}/ggan.filter"
 
 #---- run ANGSD 
-ANGSD="ANGSD DIRECTORY"
+ANGSD="angsd path"
 echo "Filtering..."
 $ANGSD -b "$BAMLIST" -ref "$REF" -out "$PREFIX" \
   -nThreads "$NCPU" \
