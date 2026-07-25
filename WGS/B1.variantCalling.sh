@@ -1,8 +1,7 @@
 #!/bin/bash
 #---- paths
 GENOME_GZ="reference.faa.gz"
-RAW_READS_DIR="raw_reads"
-TRIM_DIR="trimmomatic"
+TRIM_DIR="trimmed"
 ALIGN_DIR="readalignment"
 VARCALL_OUTDIR="varCall"
 PREFIX="wgs"
@@ -17,8 +16,8 @@ bwa index "$GENOME_GZ"
 #---- align single sample (paired-end)
 echo "aligning reads"
 bwa mem -t "$THREADS" "$GENOME_GZ" \
-    "${TRIM_DIR}/gharial_r1_trim.fastq.gz" \
-    "${TRIM_DIR}/gharial_r2_trim.fastq.gz" \
+    "${TRIM_DIR}/wgs_r1_trim.fastq.gz" \
+    "${TRIM_DIR}/wgs_r2_trim.fastq.gz" \
     | samtools view -O BAM - \
     | samtools sort -T "${ALIGN_DIR}/temp" -O bam -o "${ALIGN_DIR}/${PREFIX}.sorted.bam" -
 
