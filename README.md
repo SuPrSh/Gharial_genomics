@@ -1,4 +1,4 @@
-# Gharial Genomics
+# Gharial Genomics (H1)
 
 Code and analysis scripts accompanying the manuscript:
 
