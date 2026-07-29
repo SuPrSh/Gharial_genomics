@@ -1,4 +1,4 @@
-**Gharial Genomics**
+#**Gharial Genomics**#
 
 Code and analysis scripts accompanying the manuscript:
 
