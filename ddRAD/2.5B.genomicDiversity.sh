@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#--Note: ANGSD/realSFS/thetaStat script for nucleotide diversity (pi),
-#--Watterson's theta, and Tajima's D from ddRAD site allele frequencies
+#--Note: ANGSD/realSFS/thetaStat script for nucleotide diversity (pi), Watterson's theta, and Tajima's D from ddRAD site allele frequencies
 #---- paths
 DIR="rmDup"
 REF="reference.fa.gz"
