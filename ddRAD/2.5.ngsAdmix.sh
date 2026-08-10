@@ -1,11 +1,14 @@
+#!/bin/bash
+
 #---- paths
 INDIR="angsd/pca"
 OUTDIR="angsd/admix"
-INFILE="${INDIR}/ggan_angsd_pca.r3.step2.beagle.gz"
+INFILE="${INDIR}/*.beagle.gz"
 NGSADMIX="NGSadmix"
 NREPS=10
 
 mkdir -p "$OUTDIR" logs
+
 #---- loop to run k 2 to 10 for 10 reps each
 for K in {2..10}; do
     for rep in $(seq 1 $NREPS); do
