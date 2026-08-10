@@ -1,13 +1,11 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
-#Note: NgsRelate pairwise relatedness estimation from ddRAD genotype
-#likelihoods and allele frequencies (ANGSD glf3 format)
+#--Note: NgsRelate pairwise relatedness estimation from ddRAD genotype likelihoods and allele frequencies (ANGSD glf3 format)
 
 #---- paths
-DIR="deduplicated.bam"
-OUTDIR="outputfile"
-REF="reference.faa.gz"
+DIR="rmDup"
+OUTDIR="ngsFoutputfile"
+REF="reference.fa.gz"
 BAMLIST="${DIR}/listBams"
 PREFIX="${OUTDIR}/ggan.filter"
 NCPU=16
@@ -16,7 +14,7 @@ NCPU=16
 ANGSD="angsd path"
 NGSRELATE="NgsRelate path"
 
-#---- 1. genotype likelihoods (glf3) + allele frequencies ----
+#---- genotype likelihoods (glf3) + allele frequencies ----
 echo "Generating genotype likelihoods and allele frequencies..."
 $ANGSD -b "$BAMLIST" -ref "$REF" -out "$PREFIX" \
   -nThreads "$NCPU" \
@@ -25,15 +23,15 @@ $ANGSD -b "$BAMLIST" -ref "$REF" -out "$PREFIX" \
   -doCounts 1 -skipTriallelic 1 -GL 1 -doMajorMinor 1 -doMaf 1 -minMaf 0.05 -SNP_pval 1e-6 \
   -doGlf 3 2>&1 | tee "${PREFIX}.run.log"
 
-#---- 2. allele frequency file for NgsRelate (knownEM column from .mafs.gz) ----
+#---- allele frequency file for NgsRelate (knownEM column from .mafs.gz) ----
 echo "Extracting allele frequencies..."
 zcat "${PREFIX}.mafs.gz" | tail -n +2 | cut -f5 > "${PREFIX}.freq"
 
-#---- 3. sample count from BAM list ----
+#---- sample count from BAM list ----
 echo "Counting samples..."
 N_IND=$(wc -l < "$BAMLIST")
 
-#---- 4. run NgsRelate ----
+#---- run NgsRelate ----
 echo "Running NgsRelate..."
 $NGSRELATE -g "${PREFIX}.glf.gz" -n "$N_IND" -f "${PREFIX}.freq" \
   -O "${PREFIX}.ngsRelate" -p "$NCPU"
