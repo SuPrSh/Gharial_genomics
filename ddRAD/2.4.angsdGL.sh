@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Note: ANGSD script for population structure analysis with maf filter 
 #---- paths
-DIR="rmDUP" #deduplicated reads
+DIR="rmDup" #deduplicated reads
 OUTDIR="varCall"
 REF="reference.fa.gz"
 BAMLIST="${DIR}/listBams"
