@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 #Note: ANGSD script for population structure analysis with maf filter 
 #---- paths
 DIR="rmDup" #deduplicated reads
