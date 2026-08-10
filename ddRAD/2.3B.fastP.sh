@@ -1,10 +1,12 @@
 #!/bin/bash
+#----paths
 RT="processedRadtags"
 TR="trimmedReads"
 RD="readqc/fastp"
 
 mkdir -p "$TR" "$RD"
 
+#----run fastP
 for R1 in "$RT"*.R1.fastq.gz; do
   sample=$(basename "$R1" ".R1.fastq.gz")
   R2="$RT${sample}.R2.fastq.gz"
