@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-#Note:ANGSD script for population structure analysis with maf filter 
+#Note: ANGSD script for population structure analysis with maf filter 
 #---- paths
-DIR="deduplicated.bam"
-OUTDIR="outputfile"
-REF="reference.faa.gz"
+DIR="rmDUP" #deduplicated reads
+OUTDIR="varCall"
+REF="reference.fa.gz"
 BAMLIST="${DIR}/listBams"
 PREFIX="${OUTDIR}/ggan.filter"
 
