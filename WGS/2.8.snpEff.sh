@@ -4,7 +4,7 @@
 #---- the filtered WGS variant set from 2.4.variantCalling&Filtering.sh
 
 #---- paths / naming
-GENOME_GZ="reference.faa.gz"          # same reference used for mapping/calling
+GENOME_GZ="reference.fa.gz"          # same reference used for mapping/calling
 GFF_GZ="annotation.gff.gz"            # matching GFF3 annotation (GCF_001723915.1)
 FILTER_DIR="varFilter"
 PREFIX="wgs"
