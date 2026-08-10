@@ -5,7 +5,7 @@
 #---- 2.4.variantCalling&Filtering.sh
 
 #---- paths / naming
-GENOME_GZ="reference.faa.gz"
+GENOME_GZ="reference.fa.gz"
 FILTER_DIR="varFilter"
 PREFIX="wgs"
 ROH_DIR="roh"
