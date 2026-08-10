@@ -4,7 +4,7 @@
 #---- on the WGS reference assembly used for mapping/calling
 
 #---- paths / naming
-GENOME_GZ="reference.faa.gz"
+GENOME_GZ="reference.fa.gz"
 GFF_GZ="annotation.gff.gz"
 PREFIX="wgs"
 OUTDIR="megaSSR"
