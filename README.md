@@ -9,8 +9,7 @@ using whole-genome sequencing (WGS) and ddRAD-seq data from the gharial
 (*Gavialis gangeticus*), Chambal River population.
 
 ## Data availability
-- Raw WGS and ddRAD-seq reads: NCBI SRA accessions SAMN57494039–SAMN57494059 and
-  SRR30853456, under BioProjects PRJNA1458109 and PRJNA1167702
+- The datasets supporting the conclusions of this article are available in the NCBI Sequence Read Archive under accession numbers SRR38278210–SRR38278230 and SRR30853456, under BioProjects PRJNA1458109 (https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1458109) and PRJNA1167702 (https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA1167702). 
 - Reference genome: GCA_030020295.1 (rGavGan2.hap2),
   https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/030/020/295/GCA_030020295.1_rGavGan2.hap2/
 
